@@ -1,5 +1,5 @@
 from flask import Flask
-import sys
+import os
 
 app = Flask(__name__)
 
@@ -10,7 +10,8 @@ def hello():
 @app.route("/hostname")
 def hostname():
     hostname = os.system("hostname")
-    return hostname
+    print(hostname)
+    return "hostname"
 
 if __name__ == '__main__':
    app.run()
